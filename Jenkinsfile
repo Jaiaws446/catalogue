@@ -36,7 +36,7 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Install dependencies') {
             steps {
                 sh """
                     npm install
@@ -75,7 +75,7 @@ pipeline {
             steps {
                 script {
                         def params = [
-                            string(name: 'version', value: "${packageVersion}"),
+                            string(name: 'version', value: "$packageVersion"),
                             string(name: 'environment', value: "dev")
                         ]
                         build job: "catalogue-deploy", wait: true, parameters: params
