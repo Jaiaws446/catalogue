@@ -8,11 +8,11 @@ def configMap = [
     component: "catalogue"
 ]
 
-if(){
-
+if( ! env.BRANCH_NAME.equalsIgnoreCase('main')){
+    pipelineDecission.decidePipeline(configMap)
 
 }
 else{
-
+    echo "this is PRODUCTION, deal with CR process"
 
 }
