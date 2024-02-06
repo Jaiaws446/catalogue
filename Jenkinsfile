@@ -86,6 +86,9 @@ pipeline {
             }
         }
         stage('Deploy') {
+            when {
+                params.Deploy = true 
+            }
             steps {
                 script {
                         def params = [
